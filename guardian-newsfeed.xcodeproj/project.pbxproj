@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,9 @@
 		809133572640243000FD1C60 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809133562640243000FD1C60 /* ContentView.swift */; };
 		809133592640243600FD1C60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 809133582640243600FD1C60 /* Assets.xcassets */; };
 		8091335C2640243600FD1C60 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8091335B2640243600FD1C60 /* Preview Assets.xcassets */; };
+		80B2407D2640DF7D00D62EF6 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 80B2407C2640DF7D00D62EF6 /* SDWebImageSwiftUI */; };
+		80B64D742640DB18009C3135 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B64D732640DB18009C3135 /* DataModel.swift */; };
+		80B64D772640DB4F009C3135 /* Newsfeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B64D762640DB4F009C3135 /* Newsfeed.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,8 @@
 		809133582640243600FD1C60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8091335B2640243600FD1C60 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8091335D2640243600FD1C60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80B64D732640DB18009C3135 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		80B64D762640DB4F009C3135 /* Newsfeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Newsfeed.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80B2407D2640DF7D00D62EF6 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,8 +58,10 @@
 		809133532640243000FD1C60 /* guardian-newsfeed */ = {
 			isa = PBXGroup;
 			children = (
+				80B64D722640DB09009C3135 /* View */,
+				80B64D712640DB03009C3135 /* ViewModel */,
+				80B64D702640DAFE009C3135 /* Model */,
 				809133542640243000FD1C60 /* guardian_newsfeedApp.swift */,
-				809133562640243000FD1C60 /* ContentView.swift */,
 				809133582640243600FD1C60 /* Assets.xcassets */,
 				8091335D2640243600FD1C60 /* Info.plist */,
 				8091335A2640243600FD1C60 /* Preview Content */,
@@ -67,6 +75,30 @@
 				8091335B2640243600FD1C60 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		80B64D702640DAFE009C3135 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				80B64D732640DB18009C3135 /* DataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		80B64D712640DB03009C3135 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				80B64D762640DB4F009C3135 /* Newsfeed.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		80B64D722640DB09009C3135 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				809133562640243000FD1C60 /* ContentView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +117,9 @@
 			dependencies = (
 			);
 			name = "guardian-newsfeed";
+			packageProductDependencies = (
+				80B2407C2640DF7D00D62EF6 /* SDWebImageSwiftUI */,
+			);
 			productName = "guardian-newsfeed";
 			productReference = 809133512640243000FD1C60 /* guardian-newsfeed.app */;
 			productType = "com.apple.product-type.application";
@@ -112,6 +147,9 @@
 				Base,
 			);
 			mainGroup = 809133482640243000FD1C60;
+			packageReferences = (
+				80B2407B2640DF7D00D62EF6 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = 809133522640243000FD1C60 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -140,6 +178,8 @@
 			files = (
 				809133572640243000FD1C60 /* ContentView.swift in Sources */,
 				809133552640243000FD1C60 /* guardian_newsfeedApp.swift in Sources */,
+				80B64D772640DB4F009C3135 /* Newsfeed.swift in Sources */,
+				80B64D742640DB18009C3135 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +320,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "nouman-mehmood.guardian-newsfeed";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -302,7 +342,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "nouman-mehmood.guardian-newsfeed";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -328,6 +368,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		80B2407B2640DF7D00D62EF6 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		80B2407C2640DF7D00D62EF6 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 80B2407B2640DF7D00D62EF6 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 809133492640243000FD1C60 /* Project object */;
 }
