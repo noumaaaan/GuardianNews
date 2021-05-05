@@ -10,6 +10,7 @@ import Combine
 import SDWebImageSwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
         NavigationView {
             Home()
@@ -28,32 +29,40 @@ struct ContentView_Previews: PreviewProvider {
 // Home View
 struct Home: View {
     @ObservedObject var newsfeed = Newsfeed()
+    @State var page: Int = 1
+    
+    init() {
+        newsfeed.loadData(pageParam: page)
+    }
     
     var body: some View {
-        List(newsfeed.data) { i in
-            
-            NavigationLink (destination: DetailView(story: i) ){
-                HStack {
-                    if (i.fields.thumbnail != "") {
-                        WebImage(url: URL(string: i.fields.thumbnail)!)
+        List {
+            ForEach(newsfeed.data) { item in
+                NavigationLink (destination: DetailView(story: item) ){
+                    HStack {
+                        WebImage(url: URL(string: item.fields.thumbnail)!)
                             .resizable()
-                            .scaledToFit()
+                            .scaledToFill()
                             .frame(width: 120, height: 120)
                             .background(Color.secondary)
                             .cornerRadius(5)
-                    } else {
-                        Image("not-found").resizable().frame(width: 120, height: 80).cornerRadius(10)
+                    }
+
+                    VStack (alignment: .leading, spacing: 10) {
+                        Text(item.fields.headline)
+                            .fontWeight(.bold)
+                        Text(item.fields.trailText)
+                            .font(.caption)
+                            .multilineTextAlignment(.leading)
+                    }
+                    .frame(maxHeight: 100)
+                }
+                .onAppear() {
+                    if (newsfeed.data.last == item) {
+                        newsfeed.loadData(pageParam: page + 1)
+                        self.page += 1
                     }
                 }
-                
-                VStack (alignment: .leading, spacing: 10) {
-                    Text(i.fields.headline)
-                        .fontWeight(.bold)
-                    Text(i.fields.trailText)
-                        .font(.caption)
-                        .multilineTextAlignment(.leading)
-                }
-                .frame(maxHeight: 100)
             }
         }
     }

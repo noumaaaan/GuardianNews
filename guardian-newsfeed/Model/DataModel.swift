@@ -15,11 +15,11 @@ struct Response: Codable {
     let total, startIndex, pageSize, currentPage, pages: Int
     let results: [Result]
 }
-struct Result: Codable, Identifiable {
+struct Result: Codable, Identifiable, Equatable {
     let id, sectionName: String
     let fields: Fields
 }
-struct Fields: Codable {
+struct Fields: Codable, Equatable {
     let trailText, bodyText, headline, thumbnail: String
 }
 
