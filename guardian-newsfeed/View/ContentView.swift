@@ -23,41 +23,34 @@ struct ContentView: View {
 struct Home: View {
     @ObservedObject var newsfeed = Newsfeed()
     @State var page: Int = 1
-    
-    init() {
-        newsfeed.loadData(pageParam: page, search: nil, key: nil)
-    }
-    
+
     var body: some View {
-        
-        if (newsfeed.error != "") {
-            Error(message: newsfeed.error)
-            
-        } else {
-            List {
-                ForEach(newsfeed.data) { item in
-                    NavigationLink (destination: DetailView(story: item) ){
-                        HStack {
-                            WebImage(url: URL(string: item.fields.thumbnail)!)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 120, height: 120)
-                                .cornerRadius(2)
-                        }
-                        VStack (alignment: .leading, spacing: 5) {
-                            Text(item.fields.headline)
-                                .font(.headline)
-                                .fontWeight(.bold)
-                            Text(item.fields.trailText)
-                                .font(.caption)
-                        }
-                        .frame(maxHeight: 120)
+        List {
+            ForEach(newsfeed.data) { item in
+                NavigationLink (destination: DetailView(story: item) ){
+                    HStack {
+                        WebImage(url: URL(string: item.fields.thumbnail)!)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 120, height: 120)
+                            .cornerRadius(2)
                     }
-                    .onAppear() {
-                        if (newsfeed.data.last == item) {
-                            newsfeed.loadData(pageParam: page + 1, search: nil, key: nil)
-                            self.page += 1
+                    VStack (alignment: .leading, spacing: 5) {
+                        Text(item.fields.headline)
+                            .font(.headline)
+                            .fontWeight(.bold)
+                        Text(item.fields.trailText)
+                            .font(.caption)
+                    }
+                    .frame(maxHeight: 120)
+                }
+                .onAppear() {
+                    if (newsfeed.data.last == item) {
+                        newsfeed.loadData(pageParam: page + 1, search: nil, key: nil) { result, size in
+                            if (result != nil) { newsfeed.data.append(contentsOf: result!) }
+                            if (size != nil) { newsfeed.pageSize += size! }
                         }
+                        self.page += 1
                     }
                 }
             }
@@ -89,21 +82,6 @@ struct DetailView: View {
             }
             .padding(20)
             .navigationBarTitle(story.fields.headline)
-        }
-    }
-}
-
-// Error View
-struct Error: View {
-    let message: String
-    var body: some View {
-        VStack {
-            Text(message)
-                .fontWeight(.light)
-                .multilineTextAlignment(.center)
-                .font(.body)
-                .padding()
-            Spacer()
         }
     }
 }
