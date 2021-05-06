@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		807A86A02642B76000E7266A /* guardian_newsfeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807A869F2642B76000E7266A /* guardian_newsfeedTests.swift */; };
+		807A86B02642B77D00E7266A /* guardian_newsfeedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807A86AF2642B77D00E7266A /* guardian_newsfeedUITests.swift */; };
 		809133552640243000FD1C60 /* guardian_newsfeedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809133542640243000FD1C60 /* guardian_newsfeedApp.swift */; };
 		809133572640243000FD1C60 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809133562640243000FD1C60 /* ContentView.swift */; };
 		809133592640243600FD1C60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 809133582640243600FD1C60 /* Assets.xcassets */; };
@@ -16,7 +18,30 @@
 		80B64D772640DB4F009C3135 /* Newsfeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B64D762640DB4F009C3135 /* Newsfeed.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		807A86A22642B76000E7266A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 809133492640243000FD1C60 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 809133502640243000FD1C60;
+			remoteInfo = "guardian-newsfeed";
+		};
+		807A86B22642B77D00E7266A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 809133492640243000FD1C60 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 809133502640243000FD1C60;
+			remoteInfo = "guardian-newsfeed";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		807A869D2642B76000E7266A /* guardian-newsfeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "guardian-newsfeedTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		807A869F2642B76000E7266A /* guardian_newsfeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guardian_newsfeedTests.swift; sourceTree = "<group>"; };
+		807A86A12642B76000E7266A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		807A86AD2642B77D00E7266A /* guardian-newsfeedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "guardian-newsfeedUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		807A86AF2642B77D00E7266A /* guardian_newsfeedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guardian_newsfeedUITests.swift; sourceTree = "<group>"; };
+		807A86B12642B77D00E7266A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		809133512640243000FD1C60 /* guardian-newsfeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "guardian-newsfeed.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		809133542640243000FD1C60 /* guardian_newsfeedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guardian_newsfeedApp.swift; sourceTree = "<group>"; };
 		809133562640243000FD1C60 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -28,6 +53,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		807A869A2642B76000E7266A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		807A86AA2642B77D00E7266A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8091334E2640243000FD1C60 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -39,10 +78,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		807A869E2642B76000E7266A /* guardian-newsfeedTests */ = {
+			isa = PBXGroup;
+			children = (
+				807A869F2642B76000E7266A /* guardian_newsfeedTests.swift */,
+				807A86A12642B76000E7266A /* Info.plist */,
+			);
+			path = "guardian-newsfeedTests";
+			sourceTree = "<group>";
+		};
+		807A86AE2642B77D00E7266A /* guardian-newsfeedUITests */ = {
+			isa = PBXGroup;
+			children = (
+				807A86AF2642B77D00E7266A /* guardian_newsfeedUITests.swift */,
+				807A86B12642B77D00E7266A /* Info.plist */,
+			);
+			path = "guardian-newsfeedUITests";
+			sourceTree = "<group>";
+		};
 		809133482640243000FD1C60 = {
 			isa = PBXGroup;
 			children = (
 				809133532640243000FD1C60 /* guardian-newsfeed */,
+				807A869E2642B76000E7266A /* guardian-newsfeedTests */,
+				807A86AE2642B77D00E7266A /* guardian-newsfeedUITests */,
 				809133522640243000FD1C60 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +110,8 @@
 			isa = PBXGroup;
 			children = (
 				809133512640243000FD1C60 /* guardian-newsfeed.app */,
+				807A869D2642B76000E7266A /* guardian-newsfeedTests.xctest */,
+				807A86AD2642B77D00E7266A /* guardian-newsfeedUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,6 +165,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		807A869C2642B76000E7266A /* guardian-newsfeedTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 807A86A42642B76000E7266A /* Build configuration list for PBXNativeTarget "guardian-newsfeedTests" */;
+			buildPhases = (
+				807A86992642B76000E7266A /* Sources */,
+				807A869A2642B76000E7266A /* Frameworks */,
+				807A869B2642B76000E7266A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				807A86A32642B76000E7266A /* PBXTargetDependency */,
+			);
+			name = "guardian-newsfeedTests";
+			productName = "guardian-newsfeedTests";
+			productReference = 807A869D2642B76000E7266A /* guardian-newsfeedTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		807A86AC2642B77D00E7266A /* guardian-newsfeedUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 807A86B42642B77D00E7266A /* Build configuration list for PBXNativeTarget "guardian-newsfeedUITests" */;
+			buildPhases = (
+				807A86A92642B77D00E7266A /* Sources */,
+				807A86AA2642B77D00E7266A /* Frameworks */,
+				807A86AB2642B77D00E7266A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				807A86B32642B77D00E7266A /* PBXTargetDependency */,
+			);
+			name = "guardian-newsfeedUITests";
+			productName = "guardian-newsfeedUITests";
+			productReference = 807A86AD2642B77D00E7266A /* guardian-newsfeedUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		809133502640243000FD1C60 /* guardian-newsfeed */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 809133602640243600FD1C60 /* Build configuration list for PBXNativeTarget "guardian-newsfeed" */;
@@ -133,6 +230,14 @@
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					807A869C2642B76000E7266A = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 809133502640243000FD1C60;
+					};
+					807A86AC2642B77D00E7266A = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 809133502640243000FD1C60;
+					};
 					809133502640243000FD1C60 = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -155,11 +260,27 @@
 			projectRoot = "";
 			targets = (
 				809133502640243000FD1C60 /* guardian-newsfeed */,
+				807A869C2642B76000E7266A /* guardian-newsfeedTests */,
+				807A86AC2642B77D00E7266A /* guardian-newsfeedUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		807A869B2642B76000E7266A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		807A86AB2642B77D00E7266A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8091334F2640243000FD1C60 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -172,6 +293,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		807A86992642B76000E7266A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				807A86A02642B76000E7266A /* guardian_newsfeedTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		807A86A92642B77D00E7266A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				807A86B02642B77D00E7266A /* guardian_newsfeedUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8091334D2640243000FD1C60 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -185,7 +322,98 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		807A86A32642B76000E7266A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 809133502640243000FD1C60 /* guardian-newsfeed */;
+			targetProxy = 807A86A22642B76000E7266A /* PBXContainerItemProxy */;
+		};
+		807A86B32642B77D00E7266A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 809133502640243000FD1C60 /* guardian-newsfeed */;
+			targetProxy = 807A86B22642B77D00E7266A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		807A86A52642B76000E7266A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D949FXATB8;
+				INFOPLIST_FILE = "guardian-newsfeedTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "nouman-mehmood.guardian-newsfeedTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/guardian-newsfeed.app/guardian-newsfeed";
+			};
+			name = Debug;
+		};
+		807A86A62642B76000E7266A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D949FXATB8;
+				INFOPLIST_FILE = "guardian-newsfeedTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "nouman-mehmood.guardian-newsfeedTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/guardian-newsfeed.app/guardian-newsfeed";
+			};
+			name = Release;
+		};
+		807A86B52642B77D00E7266A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D949FXATB8;
+				INFOPLIST_FILE = "guardian-newsfeedUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "nouman-mehmood.guardian-newsfeedUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "guardian-newsfeed";
+			};
+			name = Debug;
+		};
+		807A86B62642B77D00E7266A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D949FXATB8;
+				INFOPLIST_FILE = "guardian-newsfeedUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "nouman-mehmood.guardian-newsfeedUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "guardian-newsfeed";
+			};
+			name = Release;
+		};
 		8091335E2640243600FD1C60 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -312,7 +540,7 @@
 				DEVELOPMENT_TEAM = D949FXATB8;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "guardian-newsfeed/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -334,7 +562,7 @@
 				DEVELOPMENT_TEAM = D949FXATB8;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "guardian-newsfeed/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -349,6 +577,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		807A86A42642B76000E7266A /* Build configuration list for PBXNativeTarget "guardian-newsfeedTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				807A86A52642B76000E7266A /* Debug */,
+				807A86A62642B76000E7266A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		807A86B42642B77D00E7266A /* Build configuration list for PBXNativeTarget "guardian-newsfeedUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				807A86B52642B77D00E7266A /* Debug */,
+				807A86B62642B77D00E7266A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8091334C2640243000FD1C60 /* Build configuration list for PBXProject "guardian-newsfeed" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

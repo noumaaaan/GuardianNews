@@ -7,11 +7,14 @@
 
 import SwiftUI
 
-@main
-struct guardian_newsfeedApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
+@available(iOS 14.0, *)
+struct guardian_newsfeedApp {
+    @main
+    struct guardian_newsfeedApp: App {
+        var body: some Scene {
+            WindowGroup {
+                ContentView()
+            }
         }
     }
 }

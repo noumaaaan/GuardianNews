@@ -8,15 +8,16 @@
 import Foundation
 
 struct NewsfeedResponse: Codable {
-    let response: Response
+    let response: Response?
+    let message: String?
 }
 struct Response: Codable {
     let status : String
-    let total, startIndex, pageSize, currentPage, pages: Int
+    let pageSize, currentPage, pages: Int
     let results: [Result]
 }
 struct Result: Codable, Identifiable, Equatable {
-    let id, sectionName: String
+    let id, sectionName, pillarName: String
     let fields: Fields
 }
 struct Fields: Codable, Equatable {
