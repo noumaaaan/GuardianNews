@@ -14,6 +14,6 @@ The Guardian Newsfeed is a simple app that connects to the Guardian Open Platfor
 - [SDWebImageSwiftUI](https://github.com/SDWebImage/SDWebImageSwiftUI) used as the image loading framework
 
 ### Getting Started
-Simply clone the repository in the location of your choice
+Simply clone the repository in the location of your choice and run in xcode 
 ``git clone https://github.com/noumaaaan/GuardianNews.git
 ``
