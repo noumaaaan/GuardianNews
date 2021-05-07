@@ -9,10 +9,30 @@ import SwiftUI
 import Combine
 import SDWebImageSwiftUI
 
+// Routing
+enum Coordinator {
+    case detail(Result)
+}
+
+struct Navigator {
+    static func navigate<T: View>(_ coordinate: Coordinator, @ViewBuilder content: () -> T) -> AnyView {
+        switch coordinate {
+        
+        case .detail(let item):
+            return AnyView(NavigationLink(
+                            destination: DetailView(story: item)) {
+                            content()
+            })
+        }
+    }
+}
+
+// Main
 struct ContentView: View {
     var body: some View {
         NavigationView {
             Home()
+                .accessibility(identifier: "newsList")
             .navigationBarTitle("Newsfeed")
         }
         .navigationViewStyle(StackNavigationViewStyle())
@@ -27,7 +47,8 @@ struct Home: View {
     var body: some View {
         List {
             ForEach(newsfeed.data) { item in
-                NavigationLink (destination: DetailView(story: item) ){
+                
+                Navigator.navigate(.detail(item)) {
                     HStack {
                         WebImage(url: URL(string: item.fields.thumbnail)!)
                             .resizable()
@@ -43,6 +64,7 @@ struct Home: View {
                             .font(.caption)
                     }
                     .frame(maxHeight: 120)
+
                 }
                 .onAppear() {
                     if (newsfeed.data.last == item) {
@@ -83,5 +105,7 @@ struct DetailView: View {
             .padding(20)
             .navigationBarTitle(story.fields.headline)
         }
+        .accessibility(identifier: "detailList")
     }
 }
+

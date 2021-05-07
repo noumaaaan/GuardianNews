@@ -9,34 +9,36 @@ import XCTest
 
 class guardian_newsfeedUITests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
+    override func setUp() {
         continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // UI tests must launch the application that they test.
+    
+    func test_renders_list_on_homescreen() {
         let app = XCUIApplication()
         app.launch()
-
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let render = app.tables["newsList"].exists
+        XCTAssertTrue(render)
     }
-
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
+    
+    func test_renders_detail_view_scroll() {
+        let app = XCUIApplication()
+        app.launch()
+        
+        let firstCell = app.tables["newsList"].cells.element(boundBy: 0)
+        firstCell.tap()
+        
+        let render = app.scrollViews["detailList"].exists
+        XCTAssertTrue(render)
+    }
+    
+    func test_cell_contains_chil_elements() {
+        let app = XCUIApplication()
+        app.launch()
+        
+        let firstCell = app.tables["newsList"].cells.element(boundBy: 0)
+        let res = firstCell.children(matching: .any).count
+        
+        XCTAssertEqual(res, 2)
     }
 }

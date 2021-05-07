@@ -27,7 +27,6 @@ class Newsfeed: ObservableObject {
         if (search != nil) { searchTerm = search! } else { searchTerm = "coronavirus" }
         if (key != nil) { apiKey = key! } else { apiKey = "7c566cc2-9cc5-4a08-942d-c4106344049c" }
         
-        
         let apiUrl = "https://content.guardianapis.com/search?order-by=newest&show-fields=bodyText%2Cheadline%2CtrailText%2Cthumbnail&page=\(pageParam)&q=\(searchTerm)&api-key=\(apiKey)"
         
         if (totalPages != nil) {
@@ -39,7 +38,7 @@ class Newsfeed: ObservableObject {
         guard let api = URL(string: apiUrl) else { return }
         URLSession.shared.dataTask(with: api) { (data, resp, error) in
             if let error = error {
-                print(error)
+                print(error.localizedDescription)
             } else if let data = data {
                 do {
                     let result = try JSONDecoder().decode(NewsfeedResponse.self, from: data)
@@ -51,7 +50,7 @@ class Newsfeed: ObservableObject {
                     }
 
                 } catch {
-                    print(error)
+                    print(error.localizedDescription)
                 }
             }
         }.resume()
