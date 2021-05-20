@@ -1,6 +1,9 @@
 # Guardian Newsfeed
 The Guardian Newsfeed is a simple app that connects to the Guardian Open Platform API which is a web service for accessing all the content that the Guardian creates, categorised by tags and section. To find out more about the API, see here: https://open-platform.theguardian.com/access/
 
+<img align="right" src="https://www.noumanmehmood.com/img/newsfeed1.png" alt="" width="200"/>
+<img align="right" src="https://www.noumanmehmood.com/img/newsfeed2.png" alt="" width="200"/>
+
 ## Features
 - Simple news feed with a scolling list of stories
 - Each story has an image, headline and subheading
